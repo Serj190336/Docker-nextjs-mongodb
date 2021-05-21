@@ -1,0 +1,18 @@
+{
+  "ignoreTestFiles": "**/cache/*.js",
+  "chromeWebSecurity": false,
+  "video": false,
+  "pluginsFile": false,
+  "defaultCommandTimeout": 180000,
+  "pageLoadTimeout": 600000,
+  "execTimeout": 180000,
+  "taskTimeout": 180000,
+  "requestTimeout": 180000,
+  "responseTimeout": 180000,
+  "env": {
+    "host": "https://prod.com/",
+    "lang": "en/en",
+    "desktop": {"w": 1440, "h": 900},
+    "mobile": {"w": 375, "h": 667}
+  }
+}

@@ -1,0 +1,14 @@
+{
+    "env": {
+        "host": "https://dev.com/",
+        "lang": "en/en",
+        "desktop": {"w": 1440, "h": 900},
+        "mobile": {"w": 375, "h": 667}
+    },
+    "defaultCommandTimeout": 180000,
+    "pageLoadTimeout": 300000,
+    "execTimeout": 180000,
+    "taskTimeout": 180000,
+    "requestTimeout": 180000,
+    "responseTimeout": 180000
+}

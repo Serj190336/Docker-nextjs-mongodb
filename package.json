@@ -1,0 +1,24 @@
+{
+  "name": "qq",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "test:ci": "cypress run --headless --config-file cypress/config/ci.json",
+    "test:prod": "cypress run --headless --config-file cypress/config/prod.json"
+  },
+  "dependencies": {
+    "cypress": "^7.3.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.10",
+    "next": "10.2.2",
+    "next-connect": "^0.10.1",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}

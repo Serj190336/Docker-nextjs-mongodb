@@ -1,0 +1,61 @@
+image: $CONTAINER_REGISTRY/project/cssi/node:14-alpine
+
+
+stages:
+  - dev
+  - prod
+  - cache_warmer
+
+
+run_proj_dev:on-schedule:
+# image: cypress/base:14
+  image: cypress/browsers:node14.15.0-chrome86-ff82
+  stage: dev
+  only:
+    - schedules
+  script:
+  - echo "running cypress tests ON dev.."
+  - yarn install
+  - yarn run test:dev --browser chrome
+
+run_proj_dev:on-click:
+# image: cypress/base:14
+  image: cypress/browsers:node14.15.0-chrome86-ff82
+  stage: dev
+  when: manual
+  script:
+  - echo "running cypress tests ON dev.."
+  - pwd
+  - yarn install
+  - yarn run test:dev --browser chrome
+
+cache_warmup_prod:on-click:
+# image: cypress/base:14
+  image: cypress/browsers:node14.15.0-chrome86-ff82
+  stage: cache_warmer
+  when: manual
+  script:
+  - echo "running cypress cache warm up.."
+  - yarn install
+  - yarn run cache-warmup --browser chrome
+
+run_proj_PROD:on_schedule:
+# image: cypress/base:14
+  image: cypress/browsers:node14.15.0-chrome86-ff82
+  stage: prod
+  only:
+    - schedules
+  script:
+  - echo "running cypress tests on PROD.."
+  - yarn install
+  - yarn run test:prod --browser chrome
+
+run_proj_PROD:on_click:
+# image: cypress/base:14
+  image: cypress/browsers:node14.15.0-chrome86-ff82
+  stage: prod
+  when: manual
+  script:
+  - echo "running cypress tests on PROD.."
+  - yarn install
+  - yarn run test:prod --browser chrome
